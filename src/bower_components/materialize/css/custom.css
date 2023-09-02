@@ -1,0 +1,62 @@
+/*================================================================================
+	Item Name: Materialize - Material Design Admin Template
+	Version: 5.0
+	Author: PIXINVENT
+	Author URL: https://themeforest.net/user/pixinvent/portfolio
+================================================================================
+
+NOTE:
+------
+PLACE HERE YOUR OWN CSS CODES AND IF NEEDED, OVERRIDE THE STYLES FROM THE OTHER STYLESHEETS.
+WE WILL RELEASE FUTURE UPDATES SO IN ORDER TO NOT OVERWRITE YOUR STYLES IT'S BETTER LIKE THIS.  */
+
+.footer-fixed {
+	position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/*----------------------------------------
+    Login Page
+------------------------------------------*/
+.login-bg {
+	background-image: url("../images/gallery/flat-bg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+  }
+
+  #login-page {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	height: 100vh;
+  }
+
+  #login-page .card-panel.border-radius-6.login-card {
+	margin-left: 0 !important;
+  }
+	.icon-m1 {
+		font-size: 1.5em;
+	}
+	.menu-radio-button{
+		cursor: pointer;
+	}
+
+	.modal .modal-header {
+		padding: 24px;
+		background-color: #0b2d56;
+	}
+	.modal .modal-header h4 {
+		font-family: Roboto,sans-serif;
+		color: hsla(0,0%,100%,.85);
+		margin: 0;
+	}

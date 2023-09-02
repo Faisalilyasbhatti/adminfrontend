@@ -1,0 +1,125 @@
+<div class="main-bg-login">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <div class="col-lg-12 main-div">
+    <div class="col-lg-6">
+      <div class="signIn-left">
+        <div class="logo">
+          <a href="#"><img class="logo-img" src="../../../../bower_components//materialize//images/logo/Logo-main.png" alt="logo" /></a>
+        </div>
+
+        <div class="heading-text mt-3">
+          <h1>Qbanc Back Office</h1>
+
+          <p>
+            All-in-one financial operating system for<br />
+
+            growing businesses
+          </p>
+        </div>
+        <div class="col-lg-6">
+          <p class="footer-text-one">© 2023 Qbanc. All rights reserved.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 card-container">
+      <form role="form" class="text-start" >
+
+ 
+
+        <div class="text-right">
+          <div class="remember d-flex justify-content-between align-items-center mt-4">
+            <div class="gfield">
+              <div class="ginput_container checkbox">
+
+                <div class="">
+                  <div class="input-field col s12">
+                    <h5 >Sign in</h5>
+                  </div>
+                </div>
+
+                <div class="col-lg-12">
+                  <label>Enter Username</label>
+                  <input placeholder="admin@email.com" class="input-fields-old"
+                  id="username" [(ngModel)]="userEmail" [ngModelOptions]="{standalone: true}" type="text"/>
+                </div>
+
+                <div class="col-lg-12">
+                  <label>Enter Password</label>
+                  <input placeholder="************" class="input-fields-old"
+                  id="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" type="password">
+                </div>
+
+                <div class="">
+                  <div class="col s12 m12 l12 mt-1">
+                    <p>
+                      <label>
+                        <input type="checkbox" />
+                        <span>Remember Me</span>
+                      </label>
+                    </p>
+                  </div>
+                </div>
+          
+              </div>
+            </div>
+
+            <p  class="text-primary">Forgot Password</p>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="gform_footer top_label">
+      <input (click)="onSubmit()" type="submit" name="" value="Sign in" class="gform_button button" />
+
+
+
+
+
+<!-- <div class="row login-bg">
+  <div class="col s12">
+    <div class="container"><div id="login-page" class="row">
+<div class="col s12 m6 l4 z-depth-4 card-panel border-radius-6 login-card bg-opacity-8">
+<form action="#" class="login-form">
+  <div class="row">
+    <div class="input-field col s12">
+      <h5 class="ml-4">Sign in</h5>
+    </div>
+  </div>
+  <div class="row margin">
+    <div class="input-field col s12">
+      <i class="material-icons prefix pt-2">person_outline</i>
+      <input id="username" [(ngModel)]="userEmail" [ngModelOptions]="{standalone: true}" type="text">
+      <label for="username" class="center-align">Username</label>
+    </div>
+  </div>
+  <div class="row margin">
+    <div class="input-field col s12">
+      <i class="material-icons prefix pt-2">lock_outline</i>
+      <input id="password" [(ngModel)]="password" [ngModelOptions]="{standalone: true}" type="password">
+      <label for="password">Password</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s12 m12 l12 ml-2 mt-1">
+      <p>
+        <label>
+          <input type="checkbox" />
+          <span>Remember Me</span>
+        </label>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <a (click)="onSubmit()" class="btn waves-effect waves-light border-round gradient-45deg-purple-deep-orange col s12">Login</a>
+    </div>
+  </div>
+
+</form>
+</div>
+</div>
+    </div>
+    <div class="content-overlay"></div>
+  </div>
+</div> -->

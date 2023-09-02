@@ -1,0 +1,484 @@
+<div class="row">
+    <div class="content-wrapper-before gradient-45deg-indigo-purple"></div>
+    <div class="breadcrumbs-dark pb-0 pt-1" id="breadcrumbs-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col s10 m6 l6">
+                    <h5 class="breadcrumbs-title mt-0 mb-0"><span>Business</span></h5>
+                    <ol class="breadcrumbs mb-0">
+                        <li class="breadcrumb-item"><a href="#">Home</a>
+                        </li>
+                        <li class="breadcrumb-item active"> <a href="#/merchant/list">Business list</a>
+                        </li>
+                        <li class="breadcrumb-item active">Business
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col s12">
+    <div class="container">
+        <div class="section">
+            <div class="card">
+                <div class="card-content">
+
+                    <!-- <div class="card-alert card green" *ngIf="isSuccess">
+                      <div class="card-content white-text">
+                        <p>SUCCESS! Added successfully.</p>
+                      </div>
+                    </div>
+                    <div class="card-alert card red" *ngIf="isError">
+                      <div class="card-content white-text">
+                        <p>Something Went Wrong.</p>
+                      </div>
+                    </div> -->
+                    <div class="row">
+                        <div class="col s12">
+                            <div class="row" id="main-view">
+                                <div class="col s12">
+                                    <ul class="tabs tab z-depth-1">
+                                        <li class="tab col m5"><a class="active" href="#business">Business Detail</a>
+                                        </li>
+                                        <li class="tab col m5"><a class="active" href="#profile">Profile Detail</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col s12">
+                                    <form name="profile" [formGroup]="profileForm" autocomplete="off">
+                                        <div id="profile" class="col s12">
+                                            <div class="mt-2 mb-2">
+                                                <div class="row">
+                                                    <div class="input-field col s4">
+                                                        <label for="firstName" class="active">First Name</label>
+                                                        <input type="text" formControlName="firstName"
+                                                            class="form-control" id="firstName" />
+                                                    </div>
+                                                    <div class="input-field col s4">
+                                                        <label for="lastName" class="active">Last Name</label>
+                                                        <input type="text" formControlName="lastName"
+                                                            class="form-control" id="lastName" />
+                                                    </div>
+                                                    <div class="input-field col s4">
+                                                        <label for="fullName" class="active">Full Name</label>
+                                                        <input type="text" formControlName="fullName"
+                                                            class="form-control" id="fullName" />
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="input-field col s4">
+                                                        <label for="accType" class="active">Type</label>
+                                                        <select formControlName="accType" class="form-control invalid"
+                                                            id="accType">
+                                                            <option [value]="accType"> </option>
+                                                            <option value="operator">Operator</option>
+                                                            <option value="admin">Admin</option>
+                                                            <option value="manager">Manager</option>
+                                                            <option value="ceo">CEO</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="input-field col s4">
+                                                        <label for="nationality" class="active">Nationality</label>
+                                                        <select formControlName="nationality"
+                                                            class="form-control invalid" id="nationality">
+                                                            <option [value]="nationality"> </option>
+                                                            <option value="Hong Kong">Hong Kong</option>
+                                                            <option value="Singapore">Singapore</option>
+                                                            <option value="India">India</option>
+                                                            <option value="Pakistan">Pakistan</option>
+                                                            <option value="Bangladesh">Bangladesh</option>
+                                                            <option value="Nepal">Nepal</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="input-field col s4">
+                                                        <label for="gender" class="active">Gender</label>
+                                                        <select formControlName="gender" class="form-control invalid"
+                                                            id="gender">
+                                                            <option [value]="gender"> </option>
+                                                            <option value="Male"> Male</option>
+                                                            <option value="Female"> Female</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="input-field col s4">
+                                                        <label for="dob" class="active">Date of Birth</label>
+                                                        <input type="text" formControlName="dob" class="datepicker">
+                                                    </div>
+                                                    <div class="input-field col s4">
+                                                        <label for="email" class="active">Email</label>
+                                                        <input type="text" formControlName="email" class="form-control"
+                                                            id="email" />
+                                                    </div>
+                                                    <div class="input-field col s4">
+                                                        <label for="mobileNo" class="active">Mobile No</label>
+                                                        <input type="text" formControlName="mobileNo"
+                                                            class="form-control" id="mobileNo" />
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="row">
+                                              <div class="input-field col s4">
+                                                  <label for="status">
+                                                    <input type="checkbox" formControlName="status" id="status" >
+                                                    <span>Active</span>
+                                                  </label>
+                                                </div>
+                                          </div> -->
+
+                                                <div class="row">
+                                                    <ul class="collapsible popout">
+                                                        <li>
+                                                            <div class="collapsible-header"><i
+                                                                    class="material-icons ">filter_list</i>Address
+                                                                Detail</div>
+                                                            <div class="collapsible-body">
+                                                                <form name="address" [formGroup]="addressForm"
+                                                                    autocomplete="off">
+                                                                    <div class="mt-2 mb-2">
+                                                                        <div class="row">
+                                                                            <div class="input-field col s4">
+                                                                                <label for="line1"
+                                                                                    class="active">Address Line
+                                                                                    1</label>
+                                                                                <input type="text"
+                                                                                    formControlName="line1"
+                                                                                    class="form-control" id="line1" />
+                                                                            </div>
+                                                                            <div class="input-field col s4">
+                                                                                <!-- <textarea class="materialize-textarea"></textarea> -->
+                                                                                <label for="line2"
+                                                                                    class="active">Address Line
+                                                                                    2</label>
+                                                                                <input type="text"
+                                                                                    formControlName="line2"
+                                                                                    class="form-control" id="line2" />
+                                                                            </div>
+                                                                            <div class="input-field col s4">
+                                                                                <label for="city"
+                                                                                    class="active">City</label>
+                                                                                <input type="text"
+                                                                                    formControlName="city"
+                                                                                    class="form-control" id="city">
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="row">
+                                                                            <div class="input-field col s4">
+                                                                                <label for="postalCode"
+                                                                                    class="active">Postal Code</label>
+                                                                                <input type="text"
+                                                                                    formControlName="postalCode"
+                                                                                    class="form-control"
+                                                                                    id="postalCode" />
+                                                                            </div>
+                                                                            <div class="input-field col s4">
+                                                                                <label for="state"
+                                                                                    class="active">State</label>
+                                                                                <input type="text"
+                                                                                    formControlName="state"
+                                                                                    class="form-control" id="state">
+                                                                            </div>
+                                                                            <div class="input-field col s4">
+                                                                                <label for="country"
+                                                                                    class="active">Country</label>
+                                                                                <select formControlName="country"
+                                                                                    class="form-control invalid"
+                                                                                    id="country">
+                                                                                    <option [value]="country"> </option>
+                                                                                    <option value="Hong Kong">Hong Kong
+                                                                                    </option>
+                                                                                    <option value="Singapore">Singapore
+                                                                                    </option>
+                                                                                    <option value="India">India</option>
+                                                                                    <option value="Pakistan">Pakistan
+                                                                                    </option>
+                                                                                    <option value="Bangladesh">
+                                                                                        Bangladesh</option>
+                                                                                    <option value="Nepal">Nepal</option>
+                                                                                </select>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </li>
+
+                                                        <li>
+                                                            <div class="collapsible-header"><i
+                                                                    class="material-icons ">filter_list</i>Identity
+                                                                Documents</div>
+                                                            <div class="collapsible-body">
+                                                                <form name="document" [formGroup]="documentsForm"
+                                                                    autocomplete="off">
+
+                                                                    <div class="mt-2 mb-2">
+                                                                        <div class="row">
+                                                                            <div class="input-field col s4">
+                                                                                <label for="document1"
+                                                                                    class="active">Document
+                                                                                    Title</label>
+                                                                                <img id="doc1"
+                                                                                    src="{{imageUrl}}file/downloadFile?fileID={{pDocument1}}&customerID={{result.firstName}}" />
+                                                                            </div>
+                                                                            <div class="input-field col s4">
+                                                                                <label for="doc2"
+                                                                                    class="active">Document
+                                                                                    Title</label>
+                                                                                <img id="myimage"
+                                                                                    src="{{imageUrl}}file/downloadFile?fileID={{pDocument2}}&customerID={{result.firstName}}" />
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </form>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </form>
+
+                                    <div id="business" class="col s12">
+                                        <div class="mt-2 mb-2">
+                                            <form name="business" [formGroup]="businessForm" autocomplete="off">
+                                                <div class="card-alert card green" *ngIf="isSuccess">
+                                                    <div class="card-content white-text">
+                                                        <p>SUCCESS! Merchant updated successfully.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="card-alert card red" *ngIf="isError">
+                                                    <div class="card-content white-text">
+                                                        <p>Something Went Wrong.</p>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="input-field col s4">
+                                                        <label for="businessName" class="active">Business Name</label>
+                                                        <input type="text" formControlName="businessName"
+                                                            class="form-control" id="businessName" />
+                                                    </div>
+
+                                                    <div class="input-field col s4">
+                                                        <label for="registrationNo" class="active">Registration
+                                                            Number</label>
+                                                        <input type="text" formControlName="registrationNo"
+                                                            class="form-control" id="registrationNo" />
+                                                    </div>
+                                                    <div class="input-field col s4">
+                                                        <label for="website" class="active">webiste</label>
+                                                        <input type="text" formControlName="website"
+                                                            class="form-control" id="website" />
+                                                    </div>
+                                                </div>
+
+                                            </form>
+                                            <div class="row">
+                                                <div class="col s12">
+                                                    <form name="businessAddress" [formGroup]="businessAddressForm" autocomplete="off">
+                                                    <ul class="collapsible popout">
+                                                        <li>
+                                                            <div class="collapsible-header"><i class="material-icons ">filter_list</i>Address Section</div>
+                                                            <div class="collapsible-body">
+                                                                <div class="row">
+                                                                    <div class="input-field col s4">
+                                                                        <label for="bAddresLine1" class="active" >Address Line 1</label>
+                                                                        <input type="text" formControlName="bAddresLine1" class="form-control" id="bAddresLine1" />
+                                                                    </div>
+                                                                    <div class="input-field col s4">
+                                                                        <label for="bAddresLine2" class="active">Address Line 2</label>
+                                                                        <input type="text" formControlName="bAddresLine2" class="form-control" id="bAddresLine2" />
+                                                                    </div>
+                                                                    <div class="input-field col s4">
+                                                                        <label for="bAddresCity"class="active" >City</label>
+                                                                        <input type="text"  formControlName="bAddresCity" class="form-control" id="bAddresCity">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="input-field col s4">
+                                                                        <label for="bAddresPostalCode" class="active">Postal Code</label>
+                                                                        <input type="number" formControlName="bAddresPostalCode" class="form-control" id="bAddresPostalCode"/>
+                                                                    </div>
+                                                                    <div class="input-field col s4">
+                                                                        <label for="bAddresState" class="active">State</label>
+                                                                        <input type="text"  formControlName="bAddresState" class="form-control" id="bAddresState">
+                                                                    </div>
+                                                                    <div class="input-field col s4">
+                                                                        <label for="bAddresCountry" class="active">Country</label>
+                                                                        <select  formControlName="bAddresCountry" class="form-control" id="bAddresCountry">
+                                                                        <option [value]="bAddresCountry"> </option>
+                                                                        <option value="Hong Kong">Hong Kong</option>
+                                                                        <option value="Singapore">Singapore</option>
+                                                                        <option value="India">India</option>
+                                                                        <option value="Pakistan">Pakistan</option>
+                                                                        <option value="Bangladesh">Bangladesh</option>
+                                                                        <option value="Nepal">Nepal</option>
+                                                                        </select>
+                                                                        </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="collapsible-header"><i class="material-icons ">filter_list</i>Business Documents</div>
+                                                            <div class="collapsible-body">
+                                                                <div class="row">
+                                                                    <div class="input-field col s4">
+                                                                        <label for="bDocument1" class="active">Document 1</label>
+                                                                        <img (click)="openImageInNewTab('BD1')" id="myimage" src="{{imageUrl}}file/downloadFile?fileID={{bDocument1}}&customerID={{customerBusiness.fullName}}" />
+                                                                        <!-- <input type="text" formControlName="bDocument1" class="form-control" id="bDocument1" /> -->
+                                                                    </div>
+                                                                      <div class="input-field col s4">
+                                                                        <label for="bDocument2" class="active">Document 2</label>
+                                                                        <img (click)="openImageInNewTab('BD2')" id="myimage"src="{{imageUrl}}file/downloadFile?fileID={{bDocument2}}&customerID={{customerBusiness.fullName}}" />
+                                                                        <!-- <input type="text" formControlName="bDocument2" class="form-control" id="bDocument2" /> -->
+                                                                      </div>
+                                                                </div>
+                                                            </div>
+                                                        </li>
+                                                        <!-- Stack holder collapsible -->
+                                                        <li>
+                                                            <div class="collapsible-header"><i class="material-icons ">filter_list</i>Stakeholder</div>
+                                                            <div class="collapsible-body">
+                                                                <div class="responsive-table">
+                                                                    <table  id="data-table-simple" class="display">
+                                                                      <thead>
+                                                                        <tr>
+                                                                          <th>Email</th>
+                                                                          <th>Position</th>
+                                                                          <th>Number</th>
+                                                                          <th>Actions</th>
+                                                                        </tr>
+                                                                      </thead>
+                                                                      <tbody>
+                                                                          <tr *ngFor="let holder of stakeholder">
+                                                                              <td>{{holder.email}}</td>
+                                                                              <td>{{holder.designation}}</td>
+                                                                              <td>{{holder.mobileNo}}</td>
+                                                                              <td>
+                                                                              <!-- <i class="material-icons" (click)="openModal()"  style="cursor: pointer">edit</i> -->
+                                                                              <i class="material-icons" (click)="openModal()" style="cursor: pointer">remove_red_eye</i>
+                                                                            </td>
+                                                                          </tr>
+                                                                      </tbody>
+                                                                    </table>
+                                                                  </div>
+                                                            </div>
+                                                        </li>
+                    
+                                                         <!-- Stack holder collapsible end -->
+                                                    </ul>
+                    
+                    
+                                                    <div class="row" >
+                                                        <div class="col m12 s12">
+                                                            <button  class="btn waves-effect waves-light right indigo darken-2"(click)="createCustomer()"
+                                                            type="submit">Accept</button>
+                                                            <button  class="btn waves-effect waves-light tn-lg float-right mr-1"(click)="rejectMerchant()"
+                                                            type="submit">Reject </button>
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="row" *ngIf="!pending">
+                                                        <div class="col m12 s12">
+                                                            <a href="#/merchant/list" class="btn waves-effect waves-light tn-lg float-right mr-1 " type="submit">Cancel </a>
+                                                        </div>
+                                                    </div> -->
+                                                </form>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                                                </div>
+                                                </div>
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+
+                
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Popup  -->
+
+
+<div id="modalDetail" class="modal detail">
+    <div class="modal-header">
+        <h4>Address Detail</h4>
+    </div>
+    <form name="address" [formGroup]="StakeholderAddressForm" autocomplete="off">
+        <div class="mt-2 mb-2">
+            <div class="row">
+                <div class="input-field col s4">
+                    <label for="line1" class="active">Address Line 1</label>
+                    <input type="text" formControlName="line1" class="form-control" id="line1" />
+                </div>
+                <div class="input-field col s4">
+                    <!-- <textarea class="materialize-textarea"></textarea> -->
+                    <label for="line2" class="active">Address Line 2</label>
+                    <input type="text" formControlName="line2" class="form-control" id="line2" />
+                </div>
+                <div class="input-field col s4">
+                    <label for="city" class="active">City</label>
+                    <input type="text" formControlName="city" class="form-control" id="city">
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s4">
+                    <label for="postalCode" class="active">Postal Code</label>
+                    <input type="text" formControlName="postalCode" class="form-control" id="postalCode" />
+                </div>
+                <div class="input-field col s4">
+                    <label for="state" class="active">State</label>
+                    <input type="text" formControlName="state" class="form-control" id="state">
+                </div>
+                <div class="input-field col s4">
+                    <label for="country" class="active">Country</label>
+                    <select formControlName="country" class="form-control invalid" id="country">
+                        <option [value]="country"> </option>
+                        <option value="Hong Kong">Hong Kong</option>
+                        <option value="Singapore">Singapore</option>
+                        <option value="India">India</option>
+                        <option value="Pakistan">Pakistan</option>
+                        <option value="Bangladesh">Bangladesh</option>
+                        <option value="Nepal">Nepal</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="modal-footer">
+        <button class="waves-effect btn-flat" (click)="closeModal()">Close</button>
+    </div>
+</div>
+
+<div id="modalDocument" class="modal detail">
+    <div class="modal-header">
+        <h4>Document Detail</h4>
+    </div>
+    <form name="document" [formGroup]="StakeholderDocumentsForm" autocomplete="off">
+        <div class="mt-2 mb-2">
+            <div class="row">
+                <div class="input-field col s4">
+                    <label for="document1" class="active">Document Title</label>
+                    <img id="doc1"
+                        src="{{imageUrl}}file/downloadFile?fileID={{stakeDocument1}}&customerID={{stakeholderResult}}" />
+                </div>
+                <div class="input-field col s4">
+                    <label for="doc2" class="active">Document Title</label>
+                    <img id="myimage"
+                        src="{{imageUrl}}file/downloadFile?fileID={{stakeDocument2}}&customerID={{stakeholderResult}}" />
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="modal-footer">
+        <button class="waves-effect btn-flat" (click)="closeModal()">Close</button>
+    </div>
+</div>

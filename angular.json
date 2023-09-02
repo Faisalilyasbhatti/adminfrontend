@@ -1,0 +1,194 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "evs-admin": {
+      "root": "",
+      "sourceRoot": "src",
+      "projectType": "application",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "tsConfig": "src/tsconfig.app.json",
+            "polyfills": "src/polyfills.ts",
+            "assets": [
+              "src/assets",
+              "src/favicon12.ico",
+              "src/img",
+              "src/fonts",
+              "src/bower_components"
+            ],
+            "styles": [
+              "src/bower_components/materialize/css/vendors.min.css",
+              "src/bower_components/materialize/css/flag-icon.min.css",
+              "src/bower_components/materialize/css/custom.css",
+              "src/bower_components/materialize/css/jquery.dataTables.min.css",
+              "src/bower_components/materialize/css/responsive.dataTables.min.css",
+              "src/bower_components/materialize/css/select.dataTables.min.css",
+              "src/bower_components/materialize/css/materialize.min.css",
+              "src/bower_components/materialize/css/style.min.css",
+              "src/bower_components/materialize/css/data-tables.min.css",
+              "src/bower_components/materialize/css/materialize-stepper.min.css",
+              "src/bower_components/materialize/css/form-wizard.min.css"
+            ],
+            "scripts": [
+              "src/bower_components/materialize/js/vendors.min.js",
+              "src/bower_components/materialize/js/plugins.min.js",
+              "src/bower_components/materialize/js/search.min.js",
+              "src/bower_components/materialize/js/custom-script.min.js",
+              "src/bower_components/materialize/js/jquery.dataTables.min.js",
+              "src/bower_components/materialize/js/dataTables.responsive.min.js",
+              "src/bower_components/materialize/js/dataTables.select.min.js",
+              "src/bower_components/materialize/js/materialize-stepper.min.js"
+
+            ]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
+            },
+            "development": {
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.dev.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "evs-admin:build",
+            "port": 4300
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "evs-admin:build:production"
+            },
+            "development": {
+              "browserTarget": "evs-admin:build:development"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "evs-admin:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "karmaConfig": "./karma.conf.js",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.spec.json",
+            "styles": [
+              "src/bower_components/materialize/css/vendors.min.css",
+              "src/bower_components/materialize/css/jquery.dataTables.min.css",
+              "src/bower_components/materialize/css/materialize.min.css",
+              "src/bower_components/materialize/css/style.min.css",
+              "src/bower_components/materialize/css/custom.css",
+              "src/bower_components/materialize/css/materialize-stepper.min.css",
+              "src/bower_components/materialize/css/form-wizard.min.css"
+            ],
+            "scripts": [
+              "src/bower_components/materialize/js/vendors.min.js",
+              "src/bower_components/materialize/js/plugins.min.js",
+              "src/bower_components/materialize/js/search.min.js",
+              "src/bower_components/materialize/js/custom-script.min.js",
+              "src/bower_components/materialize/js/materialize-stepper.min.js"
+            ],
+            "assets": [
+              "src/assets",
+              "src/favicon12.ico",
+              "src/img",
+              "src/fonts",
+              "src/bower_components"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "src/tsconfig.app.json",
+              "src/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "evs-admin-e2e": {
+      "root": "e2e",
+      "sourceRoot": "e2e",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "./protractor.conf.js",
+            "devServerTarget": "evs-admin:serve"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "evs-admin",
+  "schematics": {
+    "@schematics/angular:component": {
+      "prefix": "app",
+      "styleext": "css"
+    },
+    "@schematics/angular:directive": {
+      "prefix": "app"
+    }
+  },
+  "cli": {
+    "analytics": "a5f8ff2b-9fb0-44df-b0b4-7fe1822a30de"
+  }
+}

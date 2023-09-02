@@ -1,0 +1,124 @@
+ .dataTables_wrapper table.dataTable {
+    width: 100% !important;
+}
+ .dataTables_wrapper table.dataTable thead th {
+    min-width: 69px;
+    color: #616161;
+}
+ .dataTables_wrapper table.dataTable thead th.background-image-none,
+ .dataTables_wrapper table.dataTable thead th.select-all {
+    background-image: none !important;
+}
+ .dataTables_wrapper table.dataTable td,
+ .dataTables_wrapper table.dataTable th {
+    font-weight: 300;
+    white-space: nowrap;
+    border-bottom: 1px solid #cfd8dc;
+}
+ .dataTables_wrapper table.dataTable th {
+    padding: 17px 14px;
+}
+ .dataTables_wrapper table.dataTable tbody {
+    overflow: auto;
+    max-width: 100%;
+    height: 300px;
+}
+ .dataTables_wrapper table.dataTable tbody td,
+ .dataTables_wrapper table.dataTable tbody th {
+    white-space: nowrap;
+    border: none !important;
+}
+ .dataTables_wrapper table.dataTable tbody td:not(:first-child) {
+    padding: 8px 14px;
+}
+ .dataTables_wrapper table.dataTable tbody tr td:before,
+ .dataTables_wrapper table.dataTable tbody tr th:before {
+    font-size: 0.9rem;
+    line-height: 14px;
+    top: 10px;
+    width: 12px;
+    height: 12px;
+    text-indent: 0;
+}
+ .dataTables_wrapper table.dataTable tfoot td,
+ .dataTables_wrapper table.dataTable tfoot th {
+    font-weight: 300;
+    white-space: nowrap;
+    border-top: 1px solid #cfd8dc;
+}
+ .dataTables_wrapper table.dataTable.display tbody tr,
+ .dataTables_wrapper table.dataTable.stripe tbody tr {
+    height: auto;
+}
+ .dataTables_wrapper table.dataTable.display tbody tr .odd,
+ .dataTables_wrapper table.dataTable.stripe tbody tr .odd {
+    background-color: #f4f5f7;
+}
+ .dataTables_wrapper table.dataTable.display tbody tr .odd > .sorting_1,
+ .dataTables_wrapper table.dataTable.stripe tbody tr .odd > .sorting_1 {
+    background-color: transparent;
+}
+ .dataTables_wrapper table.dataTable.display tbody tr .odd.selected,
+ .dataTables_wrapper table.dataTable.stripe tbody tr .odd.selected {
+    background-color: #acbad4 !important;
+}
+ .dataTables_wrapper table.dataTable.display tbody tr .odd.selected th,
+ .dataTables_wrapper table.dataTable.stripe tbody tr .odd.selected th {
+    border-radius: 0;
+}
+ .dataTables_wrapper table.dataTable.display tbody tr.hover > .sorting_1,
+ .dataTables_wrapper table.dataTable.display tbody tr:hover > .sorting_1,
+ .dataTables_wrapper table.dataTable.order-column.hover tbody tr.hover > .sorting_1,
+ .dataTables_wrapper table.dataTable.order-column.hover tbody tr:hover > .sorting_1 {
+    background-color: transparent;
+}
+ .dataTables_wrapper table [type="checkbox"] + span:not(.lever):before,
+ .dataTables_wrapper table [type="checkbox"]:not(.filled-in) + span:not(.lever):after {
+    opacity: 0.5;
+    border-radius: 4px !important;
+}
+ .dataTables_wrapper .dataTables_filter#page-length-option_filter,
+ .dataTables_wrapper .dataTables_length#page-length-option_length {
+    display: block;
+}
+ .dataTables_wrapper .dataTables_filter#page-length-option_filter label select,
+ .dataTables_wrapper .dataTables_length#page-length-option_length label select {
+    display: inline-block;
+    width: auto;
+    height: auto;
+}
+ .dataTables_wrapper .dataTables_filter#page-length-option_filter label input,
+ .dataTables_wrapper .dataTables_length#page-length-option_length label input {
+    width: auto;
+    height: auto;
+}
+ .dataTables_wrapper .dataTables_filter,
+ .dataTables_wrapper .dataTables_length {
+    display: none;
+}
+ .dataTables_wrapper .dataTables_info {
+    margin-left: 18px;
+    color: #616161;
+}
+ .dataTables_wrapper #page-length-option_paginate,
+ .dataTables_wrapper .dataTables_paginate {
+    margin-right: 0.35rem;
+    margin-bottom: 0.75rem;
+}
+ .dataTables_wrapper #page-length-option_paginate .paginate_button,
+ .dataTables_wrapper .dataTables_paginate .paginate_button {
+    margin-top: 0.25rem;
+    padding: 0.25em 0.65em;
+}
+ .dataTables_wrapper #page-length-option_paginate .paginate_button.current,
+ .dataTables_wrapper #page-length-option_paginate .paginate_button.current:hover,
+ .dataTables_wrapper #page-length-option_paginate .paginate_button:hover,
+ .dataTables_wrapper .dataTables_paginate .paginate_button.current,
+ .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover,
+ .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    color: #fff !important;
+    border: 1px solid #2196f3;
+    border-radius: 6px;
+    background: #2196f3;
+    box-shadow: 0 0 8px 0 #2196f3;
+}

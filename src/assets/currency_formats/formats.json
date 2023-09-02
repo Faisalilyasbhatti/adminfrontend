@@ -1,0 +1,142 @@
+{
+    "en_GB": {
+        "symbol": "",
+        "decimal": ".",
+        "thousand": ",",
+        "precision": 2,
+        "format": "%s %v"
+    },
+    "cs_CZ": {
+        "symbol": "",
+        "decimal": ",",
+        "thousand": ".",
+        "precision": 2,
+        "format": "%s %v"
+    },
+    "de_CH": {
+        "symbol": "",
+        "decimal": ",",
+        "thousand": ".",
+        "precision": 2,
+        "format": "%s %v"
+    },
+    "de_DE": {
+        "symbol": "",
+        "decimal": ",",
+        "thousand": ".",
+        "precision": 2,
+        "format": "%s %v"
+    },
+    "de_DK": {
+        "symbol": "",
+        "decimal": ",",
+        "thousand": ".",
+        "precision": 2,
+        "format": "%s %v"
+    },
+    "es_ES": {
+        "symbol": "",
+        "decimal": ",",
+        "thousand": ".",
+        "precision": 2,
+        "format": "%s %v"
+    },
+    "fi_FI": {
+        "symbol": "",
+        "decimal": ",",
+        "thousand": ".",
+        "precision": 2,
+        "format": "%s %v"
+    },
+    "fr_BE": {
+        "symbol": "",
+        "decimal": ",",
+        "thousand": ".",
+        "precision": 2,
+        "format": "%s %v"
+    },
+    "fr_CH": {
+        "symbol": "",
+        "decimal": ",",
+        "thousand": ".",
+        "precision": 2,
+        "format": "%s %v"
+    },
+    "fr_FR": {
+        "symbol": "",
+        "decimal": ",",
+        "thousand": ".",
+        "precision": 2,
+        "format": "%s %v"
+    },
+    "hu_HU": {
+        "symbol": "",
+        "decimal": ",",
+        "thousand": ".",
+        "precision": 2,
+        "format": "%s %v"
+    },
+    "it_IT": {
+        "symbol": "",
+        "decimal": ",",
+        "thousand": ".",
+        "precision": 2,
+        "format": "%s %v"
+    },
+    "nl_BE": {
+        "symbol": "",
+        "decimal": ",",
+        "thousand": ".",
+        "precision": 2,
+        "format": "%s %v"
+    },
+    "nl_NL": {
+        "symbol": "",
+        "decimal": ",",
+        "thousand": ".",
+        "precision": 2,
+        "format": "%s %v"
+    },
+    "no_NO": {
+        "symbol": "",
+        "decimal": ",",
+        "thousand": ".",
+        "precision": 2,
+        "format": "%s %v"
+    },
+    "pl_PL": {
+        "symbol": "",
+        "decimal": ",",
+        "thousand": ".",
+        "precision": 2,
+        "format": "%s %v"
+    },
+    "pt_PT": {
+        "symbol": "",
+        "decimal": ",",
+        "thousand": ".",
+        "precision": 2,
+        "format": "%s %v"
+    },
+    "ro_RO": {
+        "symbol": "",
+        "decimal": ",",
+        "thousand": ".",
+        "precision": 2,
+        "format": "%s %v"
+    },
+    "se_NO": {
+        "symbol": "",
+        "decimal": ",",
+        "thousand": ".",
+        "precision": 2,
+        "format": "%s %v"
+    },
+    "se_SE": {
+        "symbol": "",
+        "decimal": ",",
+        "thousand": ".",
+        "precision": 2,
+        "format": "%s %v"
+    }
+}

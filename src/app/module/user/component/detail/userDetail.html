@@ -1,0 +1,162 @@
+<div class="container">
+  <div class="row">
+
+    <div class="content-wrapper-before gradient-45deg-indigo-purple"></div>
+    <div class="breadcrumbs-dark pb-0 pt-1" id="breadcrumbs-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col s10 m6 l6">
+            <h5 class="breadcrumbs-title mt-0 mb-0"><span>Users View</span></h5>
+            <ol class="breadcrumbs mb-0">
+              <li class="breadcrumb-item"><a href="index.html">Home</a>
+              </li>
+              <li class="breadcrumb-item"><a href="#/user/list">User</a>
+              </li>
+              <li class="breadcrumb-item active">Users View
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col s12">
+
+      <div class="container">
+        <!-- users view start -->
+<div class="section users-view">
+<!-- users view media object start -->
+</div>
+      </div>
+      <div class="content-overlay"></div>
+    </div>
+
+    <div class="section users-view">
+
+     <!-- Form Advance -->
+     <div class="row">
+      <div class="col s12">
+      <div class="col s12 m12 l12" >
+        <div id="Form-advance" class="card card card-default scrollspy">
+          <div class="card-content">
+            <h4 class="card-title">User Form</h4>
+            <div class="card-alert card green" *ngIf="isSuccess">
+                <div class="card-content white-text">
+                  <p>SUCCESS! User updated successfully.</p>
+                </div>
+            </div>
+              <div class="card-alert card red"*ngIf="isError">
+                <div class="card-content white-text">
+                  <p>Something Went Wrong.</p>
+                </div>
+              </div>
+            <form name="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+              <div class="row">
+                <div class="input-field col m6 s12">
+                  <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" class="form-control" formControlName="email"
+                    [ngClass]="{'invalid': submitted && f.email.errors }" />
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                      <div *ngIf="f.email.errors.required">Email is required</div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col m6 s12">
+                  <div class="form-group">
+                    <label for="first_name">First Name *</label>
+                    <input type="text" formControlName="firstName" class="form-control"
+                    [ngClass]="{'invalid': submitted  && f.firstName.errors }" />
+                    <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                    <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                  </div>
+                  <div *ngIf="f.firstName.hasError('trimError')" >First Name does not contain Spaces </div>
+                </div>
+                </div>
+                <div class="input-field col m6 s12">
+                  <div class="form-group">
+                    <label for="lastName" >Last Name *</label>
+                    <input type="text" id="lastName" class="form-control" formControlName="lastName"
+                    [ngClass]="{'invalid': submitted && f.lastName.errors }" />
+                    <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                    <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                    </div>
+                    <div *ngIf="f.lastName.hasError('trimError')" >Last Name does not contain Spaces </div>
+                    </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col m6 s12">
+                    <label for="password" class="active">Password *</label>
+                    <input id="password" type="password" class="form-control" formControlName="password"
+                    [ngClass]="{'invalid': submitted && f.password.errors }"/>
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                      <div *ngIf="f.password.errors.required">Password is required</div>
+                    </div>
+                </div>
+                <div class="input-field col m6 s12">
+                  <label>
+                    <input type="checkbox" formControlName="status" id="status"/>
+                    <span>Active</span>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+              </div>
+              <div class="row" *ngIf="mode != 'View'">
+                <div class="input-field col m6 s12" >
+                  <h5 class="indigo-text">Select Role</h5>
+                  <!-- <div id="selectRole" class="chips chips-initial"> -->
+                    <div class="chip" *ngFor="let obj of roles" style="cursor: cell;">
+                     <span (click)="addRole(obj)">{{obj.code}}</span>
+                    </div>
+                  <!-- </div> -->
+                 </div>
+                 <div class="input-field col m6 s12">
+                  <h5 class="indigo-text">Selected Roles</h5>
+                  <!-- <div id="selectedRole" class="chips chips-initial" > -->
+                    <div class="chip" *ngFor="let obj of selectedRoles" style="cursor: cell;">
+                      <span (click)="removeRole(obj)">{{obj.code}}</span>
+                    </div>
+                    <div *ngIf="submitted && selectedRoles.length == 0" class="invalid-feedback">
+                      Roles is required
+                    </div>
+                 </div>
+              </div>
+              <div class="row" *ngIf="mode == 'View'">
+                 <div class="input-field col m6 s12">
+                  <h5 class="indigo-text">Roles</h5>
+                  <!-- <div id="viewRoles" class="chips chips-initial" > -->
+                    <div class="chip" *ngFor="let obj of selectedRoles" style="cursor: cell;">
+                      <span>{{obj.code}}</span>
+                    </div>
+                  <!-- </div> -->
+                 </div>
+              </div>
+              <div class="row">
+                  <div class="input-field col s12">
+                    <ng-container *ngIf="isSuccess; else elseBlockButtons" >
+                      <a href="#/user/list" id="successButton" class="btn cyan waves-effect waves-light right"
+                      type="submit" >Done!
+                      </a>
+                    </ng-container>
+                    <ng-template #elseBlockButtons>
+                      <button id="userSubmit" class="btn cyan waves-effect waves-light right"
+                      type="submit" >Submit
+                      </button>
+                      <a href="#/user/list" class="mb-6 btn waves-effect waves-light red accent-2 mr-1 right"
+                      type="submit">Cancel </a>
+                    </ng-template>
+                  </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      </div>
+     </div>
+    <div class="content-overlay"></div>
+  </div>
+</div>
+</div>

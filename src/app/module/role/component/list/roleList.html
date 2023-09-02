@@ -1,0 +1,118 @@
+<div class="container">
+  <div class="row">
+    <div class="content-wrapper-before gradient-45deg-indigo-purple"></div>
+    <div class="breadcrumbs-dark pb-0 pt-1" id="breadcrumbs-wrapper">
+      <!-- Search for small screen-->
+      <div class="container">
+        <div class="row">
+          <div class="col s10 m6 l6">
+            <h5 class="breadcrumbs-title mt-0 mb-0"><span>Role List</span></h5>
+            <ol class="breadcrumbs mb-0">
+              <li class="breadcrumb-item"><a href="#">Home</a>
+              </li>
+              <li class="breadcrumb-item"><a href="#/user/list">User</a>
+              </li>
+              <li class="breadcrumb-item active"><a href="#/role/list">Role List</a>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col s12">
+      <div class="container">
+        <!-- users list start -->
+<section class="users-list-wrapper section">
+<div class="users-list-filter">
+<div class="card-panel">
+  <div class="row">
+    <form>
+      <div class="col s12 m6 l3">
+         <label for="users-list-verified">Verified</label> 
+        <div class="input-field">
+          <select class="form-control" id="users-list-verified">
+            <option value="">Any</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div> 
+      </div>
+      <div class="col s12 m6 l3">
+        <label for="users-list-role">Role</label>
+        <div class="input-field">
+          <select class="form-control" id="users-list-role">
+            <option value="">Any</option>
+            <option value="User">User</option>
+            <option value="Staff">Staff</option>
+          </select>
+        </div>
+      </div>
+      <div class="col s12 m6 l3">
+        <label for="users-list-status">Status</label>
+        <div class="input-field">
+          <select class="form-control" id="users-list-status">
+            <option value="">Any</option>
+            <option value="Active">Active</option>
+            <option value="Close">Close</option>
+            <option value="Banned">Banned</option>
+          </select>
+        </div>
+      </div>
+      <div class="col s12 m6 l3 display-flex align-items-center show-btn">
+        <button type="submit" class="btn btn-block indigo waves-effect waves-light">Search</button>
+      </div>
+    </form>
+  </div>
+</div>
+</div>
+<div class="users-list-table">
+<div class="card">
+  <div class="card-content">
+    <div class="float-right">
+      <div class="show-btn">
+        <button type="submit" (click)="createNewUser()" class="btn btn-block indigo border bg-light waves-light btn-lg pull-right">Add Role</button>
+      </div>
+    </div>
+    <!-- datatable start -->
+    <div class="form-layout-footer d-flex align-items-center mb-2">
+      <i class="fa fa-file-excel-o text-success float-right pointer" style="margin-right:10px; font-size:20px;" (click)="exportExcel()" [hidden]="roles.length === 0"></i>
+    </div>
+    <div class="responsive-table">
+      <table id="data-table-simple" class="display">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Code</th>
+            <th>Created Date</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let role of roles" role="row">
+            <td>{{role.name}}</td>
+            <td><a href="#/dashboard">{{role.code}}</a></td>
+            <td>{{role.createdDate}}</td>
+            <td><span [ngClass]="role.status === 1 ? 'chip green lighten-5' : 'chip red lighten-5'">
+                <span class="green-text">{{role.status === 1 ? 'Active' : 'Non Active'}}</span>
+              </span>
+            </td>
+            <td >
+              <i class="material-icons" (click)="editUserDetail(role)" style="cursor: pointer">edit</i>
+              <i class="material-icons" (click)="viewUserDetail(role)" style="cursor: pointer">remove_red_eye</i>
+            </td>
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+    <!-- datatable ends -->
+  </div>
+</div>
+</div>
+</section>
+      </div>
+
+    </div>
+  </div>
+  </div>

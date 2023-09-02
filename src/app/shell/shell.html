@@ -1,0 +1,12 @@
+<ng-container *ngIf="isLoggedIn(); else elseBlock">
+	<app-header ></app-header>
+	<app-menu ></app-menu>
+	<div id="main">
+		<router-outlet></router-outlet>
+	</div>
+	<app-footer ></app-footer>
+</ng-container>
+<ng-template #elseBlock>
+	<router-outlet></router-outlet>
+</ng-template>
+<ngx-ui-loader></ngx-ui-loader>

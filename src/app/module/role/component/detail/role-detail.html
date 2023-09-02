@@ -1,0 +1,150 @@
+<div class="container">
+<div class="row">
+  <div class="content-wrapper-before gradient-45deg-indigo-purple"></div>
+  <div class="breadcrumbs-dark pb-0 pt-1" id="breadcrumbs-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col s10 m6 l6">
+          <h5 class="breadcrumbs-title mt-0 mb-0"><span>Role View</span></h5>
+          <ol class="breadcrumbs mb-0">
+            <li class="breadcrumb-item"><a href="index.html">Home</a>
+            </li>
+            <li class="breadcrumb-item"><a href="#/role/list">Role</a>
+            </li>
+            <li class="breadcrumb-item active">Role View
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col s12">
+    <div class="container">
+    </div>
+    <div class="content-overlay"></div>
+  </div>
+<div class="section users-view">
+    <div class="row">
+    <div class="col s12">
+  </div>
+</div>
+  <!-- Form Advance -->
+  <div class="row">
+    <div class="col s12">
+  <div class="col s12 m12 l12">
+    <div id="Form-advance" class="card card card-default scrollspy">
+      <div class="card-content">
+        <h4 class="card-title">Role Form</h4>
+        <div class="card-alert card green" *ngIf="isSuccess">
+          <div class="card-content white-text">
+            <p>SUCCESS! Role updated successfully.</p>
+          </div>
+        </div>
+        <div class="card-alert card red"*ngIf="isError">
+          <div class="card-content white-text">
+            <p>Something Went Wrong.</p>
+          </div>
+        </div>
+        <form name="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <div class="input-field col m6 s12">
+              <div class="form-group">
+                <label for="Name" class="active"> Name *</label>
+                <input type="text" formControlName="Name"
+                    [ngClass]="{'invalid': submitted  && f.Name.errors }"/>
+                    <div *ngIf="submitted && f.Name.errors" class="invalid-feedback">
+                      <div *ngIf="f.Name.errors.required">Name is required</div>
+                      </div>
+                    <div *ngIf="f.Name.hasError('trimError')" >Name does not contain Spaces </div>
+              </div>
+            </div>
+            <div class="input-field col m6 s12">
+              <div class="form-group">
+              <label for="Code" class="active">Code *</label>
+              <input type="text" formControlName="Code"
+                  [ngClass]="{'invalid': submitted  && f.Code.errors }"/>
+              <div *ngIf="submitted && f.Code.errors" class="invalid-feedback">
+                <div *ngIf="f.Code.errors.required">Code is required</div>
+                </div>
+                <div *ngIf="f.Code.hasError('trimError')" >Code does not contain Spaces </div>
+            </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col m6 s12">
+              <label for="CreatedDate" class="active">Select Role Type *</label>
+              <select class="browser-default" formControlName="RoleType" id="RoleType"
+              [ngClass]="{'invalid': submitted  && f.RoleType.errors }" >
+                <option *ngFor="let obj of roleType" [value]="obj.id" >
+                {{obj.name}}
+                </option>
+              </select>
+              <div *ngIf="submitted && f.RoleType.errors" class="invalid-feedback">
+                <div *ngIf="f.RoleType.errors.required">Role Type is required</div>
+                </div>
+            </div>
+            <div class="input-field col m6 s12">
+              <label>
+                <input type="checkbox" formControlName="Status" id="Status" />
+                <span>Active</span>
+              </label>
+            </div>
+          </div>
+          <div class="row" *ngIf="mode != 'View'">
+            <div class="input-field col m6 s12">
+              <h5 class="indigo-text">Select Permessions</h5>
+              <!-- <div  > -->
+                <div class="chip" *ngFor="let obj of permissions" style="cursor: cell;">
+                  <span (click)="addRole(obj)">{{obj.code}}</span>
+                </div>
+              <!-- </div> -->
+             </div>
+             <div class="input-field col m6 s12">
+              <h5 class="indigo-text">Selected Permessions</h5>
+              <div class="chip" *ngFor="let obj of selectedPermission" style="cursor: cell;">
+                <span (click)="removeRole(obj)">{{obj.code}}</span>
+              </div>
+              <div *ngIf="submitted && selectedPermission == undefined" class="invalid-feedback">
+                Permission is required
+              </div>
+             </div>
+          </div>
+          <div class="row" *ngIf="mode == 'View'">
+            <div class="input-field col m6 s12" style="background-color:rgb(245, 243, 250);color:wheat">
+             <h5 class="indigo-text">Permessions</h5>
+             <!-- <div id="viewRoles" class="chips chips-initial" > -->
+               <div class="chip" *ngFor="let obj of selectedPermission" style="cursor: cell;">
+                 <span>{{obj.code}}</span>
+               </div>
+             <!-- </div> -->
+            </div>
+         </div>
+          <div class="row">
+            <div class="row">
+              <div class="input-field col s12" *ngIf="mode != 'View'">
+                <ng-container *ngIf="isSuccess; else elseBlockButtons" >
+                  <a href="#/role/list" id="successButton" class="btn cyan waves-effect waves-light right"
+                  type="submit" >Done!
+                  </a>
+                </ng-container>
+                <ng-template #elseBlockButtons>
+                  <button id="userSubmit" class="btn cyan waves-effect waves-light right"
+                  type="submit" >Submit
+                  </button>
+                  <a href="#/role/list" class="mb-6 btn waves-effect waves-light red accent-2 mr-1 right"
+                  type="submit">Cancel </a>
+                </ng-template>
+              </div>
+
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+  </div>
+<div class="content-overlay"></div>
+</div>
+</div>
+</div>
